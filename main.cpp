@@ -26,6 +26,7 @@ void pr2() {
 
 void pr6() {
     int* p = new int(42);
+    // int* p = new int[5]; malloc a memory for array of 5 int
     cout << *p << endl;
     delete p;
     cout << *p << endl; // rand value
