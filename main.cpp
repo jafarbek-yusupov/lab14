@@ -119,7 +119,16 @@ void pr13() {
     cout << "Capacity after shrink_to_fit: " << v.capacity() << endl;
 }
 
+void pr14() {
+    vector<int> v;
+    for (int i = 0; i < 10; ++i){   v.push_back(i + 1);}
+    v.resize(50);
+    cout << "Size of vector after resizing: " << v.size() << endl;
+    cout << "Capacity of vector after resizing: " << v.capacity() << endl;
+    cout << "Estimated memory usage (in bytes): " << v.capacity() * sizeof(int) << " bytes" << endl;
+}
+
 int main() {
-    pr13();
+    pr14();
     return 0;
 }
