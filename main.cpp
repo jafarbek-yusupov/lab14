@@ -53,7 +53,16 @@ void pr7() {
     // delete[] p; //
 }
 
+void pr8() {
+    int *p = new int[5]; //malloc a memory for array of 5 int
+    for (int i = 0; i < 5; ++i){    *(p +i) = i + 1;}
+    for (int i = 0; i < 5; ++i){    cout << *(p +i) << ' ';}
+    cout << endl;
+    // memory leak occurs here because we forgot to dealloc mem
+    delete[] p;
+}
+
 int main() {
-    pr6();
+    pr8();
     return 0;
 }
