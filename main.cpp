@@ -24,6 +24,14 @@ void pr2() {
     }
 }
 
+void pr6() {
+    int* p = new int(42);
+    cout << *p << endl;
+    delete p;
+    cout << *p << endl; // rand value
+    p = nullptr;
+}
+
 void pr4test() {
     srand(time(0));
     int n;   cout << "Enter the number of test: "; cin >> n;
@@ -38,6 +46,6 @@ void pr4test() {
 }
 
 int main() {
-    pr2();
+    pr6();
     return 0;
 }
