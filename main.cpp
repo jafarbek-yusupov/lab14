@@ -93,7 +93,19 @@ void pr11() {
     cout << v.capacity() << endl;
 }
 
+void pr12() {
+    vector<int> v;
+    for (int i=0; i<100;i++){ v.push_back(i);}
+    for (int& i : v){ cout << i <<" ";} cout << endl;
+    cout << "Size Before : "<< v.size() << endl;
+    cout << "Cap Before : " << v.capacity() << endl;
+    for (int i=0; i<50;i++){ v.erase(v.begin());}
+    for (int& i : v){ cout << i <<" ";} cout << endl;
+    cout << "Size After : "<< v.size() << endl;
+    cout << "Cap After : " << v.capacity() << endl;
+}
+
 int main() {
-    pr11();
+    pr12();
     return 0;
 }
