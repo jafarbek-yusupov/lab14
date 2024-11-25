@@ -127,8 +127,21 @@ void pr14() {
     cout << "Capacity of vector after resizing: " << v.capacity() << endl;
     cout << "Estimated memory usage (in bytes): " << v.capacity() * sizeof(int) << " bytes" << endl;
 }
+void pr15() {
+    vector<int> v(100);
+    for (int i = 0; i < 100; ++i){  v[i] = i + 1;}
+    for (int i = 0; i < v.size(); i += 2) {
+        cout << "Before erasing element at index " << i << " with value " << v[i] << " : " << endl;
+        v.erase(v.begin() + i);
+        cout << "After erasing element at index " << i << " : " << endl;
+        cout << "Size: " << v.size() << ", Capacity: " << v.capacity() << endl;
+        --i;
+    }
+    v.shrink_to_fit();
+    cout << "Final capacity after shrink_to_fit: " << v.capacity() << endl;
+}
 
 int main() {
-    pr14();
+    pr15();
     return 0;
 }
