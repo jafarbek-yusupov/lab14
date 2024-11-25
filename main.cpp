@@ -11,7 +11,7 @@ void pr1(){
 }
 
 void pr2() {
-
+    cout << "hello world" << endl;
 }
 
 int main() {
