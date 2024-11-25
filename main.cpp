@@ -23,6 +23,18 @@ void pr2() {
         cout << endl;
     }
 }
+void pr4test() {
+    srand(time(0));
+    int n;   cout << "Enter the number of test: "; cin >> n;
+    cout << endl;
+    for (int i = 0; i < n; ++i) {
+        cout << "Test #" << i + 1 << ":" << endl;
+        int A = rand() % 6 + 1; int B = rand() % 6 + 1;
+        cout << "A roll: " << A << ", B roll: " << B << endl;
+        cout << "Probability that D wins: " << probability(&A, &B) << endl;
+        cout << "---------------------------------" << endl;
+    }
+}
 
 void pr6() {
     int* p = new int(42);
@@ -33,17 +45,12 @@ void pr6() {
     p = nullptr;
 }
 
-void pr4test() {
-    srand(time(0));
-    int n;   cout << "Enter the number of test: "; cin >> n;
+void pr7() {
+    int *p = new int[5]; //malloc a memory for array of 5 int
+    for (int i = 0; i < 5; ++i){    *(p +i) = i * 1;}
     cout << endl;
-    for (int i = 0; i < n; ++i) {
-        cout << "Test #" << i + 1 << ":" << endl;
-        int A = rand() % 6 + 1; int B = rand() % 6 + 1;
-        cout << "A roll: " << A << ", B roll: " << B << endl;
-        cout << "Probability that Dilya wins: " << probability(&A, &B) << endl;
-        cout << "---------------------------------" << endl;
-    }
+    // memory leak occurs here because we forgot to dealloc mem
+    // delete[] p; //
 }
 
 int main() {
