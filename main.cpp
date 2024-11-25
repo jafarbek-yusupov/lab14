@@ -1,4 +1,5 @@
 #include <iostream>
+#include <vector>
 using namespace std;
 
 void pr1(){
@@ -76,15 +77,23 @@ void pr9() {
     // return 0;
 }
 
+void pr11() {
+    vector<int> v;
+    for (int i=0; i<5;i++){ v.push_back(i);}
+    cout << v.size() << endl;
+    cout << v.capacity() << endl;
+    for (int i=0; i<10;i++){ v.push_back(i);}
+    cout << v.size() << endl;
+    cout << v.capacity() << endl;
+    for (int i=0; i<5;i++){ v.push_back(i);}
+    cout << v.size() << endl;
+    cout << v.capacity() << endl;
+    for (int i=0; i<25;i++){ v.push_back(i);}
+    cout << v.size() << endl;
+    cout << v.capacity() << endl;
+}
+
 int main() {
-    int *p = new int[3];
-    for (int i = 0; i < 3; ++i){    *(p +i) = i + 1;}
-    int *p1 = new int[6];
-    for (int i = 0; i < 3; ++i){    *(p1 +i) = *(p+i);}
-    for (int i = 3; i < 6; ++i){    *(p1 +i) = i + 72;}
-    delete[] p;
-    for (int i = 0; i < 6; ++i){    cout << *(p1 +i) << ' ';}
-    cout << endl;
-    delete[] p1;
+    pr11();
     return 0;
 }
