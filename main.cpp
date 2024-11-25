@@ -10,7 +10,11 @@ void pr1(){
     }
 }
 
+void pr2() {
+
+}
+
 int main() {
-    // pr1();
+    pr1();
     return 0;
 }
