@@ -62,7 +62,29 @@ void pr8() {
     delete[] p;
 }
 
+void pr9() {
+// int main(){
+    int *p = new int[3];
+    for (int i = 0; i < 3; ++i){    *(p +i) = i + 1;}
+    int *p1 = new int[6];
+    for (int i = 0; i < 3; ++i){    *(p1 +i) = *(p+i);}
+    for (int i = 3; i < 6; ++i){    *(p1 +i) = i + 72;}
+    delete[] p;
+    for (int i = 0; i < 6; ++i){    cout << *(p1 +i) << ' ';}
+    cout << endl;
+    delete[] p1;
+    // return 0;
+}
+
 int main() {
-    pr8();
+    int *p = new int[3];
+    for (int i = 0; i < 3; ++i){    *(p +i) = i + 1;}
+    int *p1 = new int[6];
+    for (int i = 0; i < 3; ++i){    *(p1 +i) = *(p+i);}
+    for (int i = 3; i < 6; ++i){    *(p1 +i) = i + 72;}
+    delete[] p;
+    for (int i = 0; i < 6; ++i){    cout << *(p1 +i) << ' ';}
+    cout << endl;
+    delete[] p1;
     return 0;
 }
