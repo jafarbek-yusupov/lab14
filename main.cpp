@@ -99,13 +99,27 @@ void pr12() {
     for (int& i : v){ cout << i <<" ";} cout << endl;
     cout << "Size Before : "<< v.size() << endl;
     cout << "Cap Before : " << v.capacity() << endl;
-    for (int i=0; i<50;i++){ v.erase(v.begin());}
+    v.erase(v.begin() + 50, v.end());
     for (int& i : v){ cout << i <<" ";} cout << endl;
     cout << "Size After : "<< v.size() << endl;
     cout << "Cap After : " << v.capacity() << endl;
 }
 
+void pr13() {
+    vector<int> v;
+    for (int i=0; i<100;i++){ v.push_back(i);}
+    for (int& i : v){ cout << i <<" ";} cout << endl;
+    cout << "Size Before : "<< v.size() << endl;
+    cout << "Cap Before : " << v.capacity() << endl;
+    v.erase(v.begin(), v.begin()+50);
+    for (int& i : v){ cout << i <<" ";} cout << endl;
+    cout << "Size After : "<< v.size() << endl;
+    cout << "Cap After : " << v.capacity() << endl;
+    v.shrink_to_fit();
+    cout << "Capacity after shrink_to_fit: " << v.capacity() << endl;
+}
+
 int main() {
-    pr12();
+    pr13();
     return 0;
 }
