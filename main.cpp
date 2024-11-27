@@ -11,9 +11,7 @@ void pr1(){
     }
 }
 
-double probability(int *y,int *w) {
-    return (7-max(*y, *w))/6.;
-}
+double probability(int *y,int *w){    return (7-max(*y, *w))/6.;}
 
 void pr2() {
     int a[2][3];
